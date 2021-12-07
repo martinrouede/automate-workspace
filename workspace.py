@@ -23,7 +23,9 @@ def main():
 		sys.exit()
 
 	command = commands[int(sys.argv[1])]
+	
 	os.chdir(command["path"])
+	os.system("code .")
 	os.system("gnome-terminal --tab --title='"+command["path"]+"'")
 
 	for s in command["scripts"]:
