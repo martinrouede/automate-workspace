@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import os
 import sys
+import platform
 import json
 
 def main():
@@ -16,9 +17,17 @@ def main():
 	
 	os.chdir(command["path"])
 	os.system("code .")
-	os.system("gnome-terminal --tab --title='"+command["path"]+"'")
+
+	if(platform.system() == "Linux"):
+		os.system("gnome-terminal --tab --title='"+command["path"]+"'")
+	if(platform.system() == "Windows"):
+		os.system("start cmd /k powershell")
+	
 
 	for s in command["scripts"]:
-		os.system("gnome-terminal --tab --title='"+s+"' -- "+s+"")
+		if(platform.system() == "Linux"):
+			os.system("gnome-terminal --tab --title='"+s+"' -- "+s+"")
+		if(platform.system() == "Windows"):
+			os.system("start cmd /k "+s+"")
 
 main()
