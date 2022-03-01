@@ -1,6 +1,10 @@
 # automate-workspace
 
-A simple script to facilitate the setup and running your projects. This script open a gnome terminal and a VS code window from the folder you configure, and runs some commands you want to run as well, like a React App with `npm run start`.
+A simple script to facilitate the setup and running your projects.
+
+This script open a gnome terminal and a VS code window from the folder you configure, and runs some commands you want to run as well,
+
+like a React App with `npm run start`.
 
 ## Usage
 
